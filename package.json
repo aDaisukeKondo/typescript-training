@@ -1,0 +1,25 @@
+{
+  "name": "typescript-training",
+  "version": "1.0.0",
+  "description": "training for typescript",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "awesome-typescript-loader": "^3.4.1",
+    "source-map-loader": "^0.2.3",
+    "typescript": "^2.6.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aDaisukeKondo/typescript-training.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aDaisukeKondo/typescript-training/issues"
+  },
+  "homepage": "https://github.com/aDaisukeKondo/typescript-training#readme"
+}
