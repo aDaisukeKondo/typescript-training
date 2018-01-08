@@ -1,4 +1,8 @@
-import MyApp from './app';
+import BitBank from './app';
+import {Pair} from './const';
 
-const app = new MyApp();
-app.exec();
+const bitbank = new BitBank();
+bitbank.fetch(Pair.BTC);
+
+console.log(bitbank.price);
+console.log(bitbank.timestamp);
