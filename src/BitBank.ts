@@ -9,12 +9,12 @@ export default class BitBank implements BrokerAdapter {
   private ticker: TickerType;
 
   constructor() {
-    console.log('SimpleTicker constructor');
+    console.log('BitBank constructor');
     console.log(`Node version: ${process.version}`);
 
     this.origin = 'https://public.bitbank.cc';
-    this.name = 'SimpleTicker';
-    this.ticker = {
+    this.name = 'BitBank';
+    this.ticker = { // TODO: Is there more suitable codes ?
       sell: '',
       buy: '',
       high: '',
