@@ -1,32 +1,46 @@
+import BrokerAdapter from './BrokerAdapter';
+import TickerType from './TickerType';
 import {Pair} from './const';
+import fetch from 'node-fetch';
 
 export default class BitBank implements BrokerAdapter {
+  private origin = 'https://public.bitbank.cc';
   private name: string;
-  private ticker: {
-    sell: string,
-    buy: string,
-    high: string,
-    low: string,
-    last: string,
-    vol: string,
-    timestamp: number
-  };
+  private ticker: TickerType;
 
   constructor() {
     console.log('SimpleTicker constructor');
     console.log(`Node version: ${process.version}`);
+
+    this.origin = 'https://public.bitbank.cc';
     this.name = 'SimpleTicker';
+    this.ticker = {
+      sell: '',
+      buy: '',
+      high: '',
+      low: '',
+      last: '',
+      vol: '',
+      timestamp: 0
+    };
   }
 
-  fetch(aPair: Pair): void {
-    // https://public.bitbank.cc/btc_jpy/ticker
+  async fetch(aPair: Pair, aCallback: (aTicker: TickerType) => void) {
+    const url = `${this.origin}/${aPair}/ticker`;
+
+    return fetch(url)
+      .then(aResult => aResult.json())
+      .then(aJSON => {
+        this.ticker = aJSON.data;
+        aCallback(aJSON.data);
+      });
   }
 
-  get price(): string {
+  get price(): number {
     if (!this.ticker) {
-      return '';
+      return 0;
     }
-    return this.ticker.last;
+    return +this.ticker.last; // TODO: cast
   }
 
   get timestamp(): number {
