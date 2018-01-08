@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "sourceMap": true,
+    "target": "es6",
+    "module": "commonjs",
+    "outDir": "dist"
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}
+
+
+/*
+
+  "compilerOptions": {
+    "target": "es6",
+    "alwaysStrict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noImplicitAny": false,
+    "strictNullChecks": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "noUnusedLocals": true,
+    "types": ["reflect-metadata"],
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
+  },
+  "files": [
+    "./node_modules/@types/node/index.d.ts"
+  ],
+
+}
+*/
